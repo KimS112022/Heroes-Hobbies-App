@@ -1,0 +1,29 @@
+{
+  "name": "heroes-hobbies-app",
+  "version": "1.0.0",
+  "description": "an app for users to purchase comics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KimS112022/Heroes-Hobbies-App.git"
+  },
+  "keywords": [
+    "comic",
+    "comic",
+    "book",
+    "trade-paper-back",
+    "tpb"
+  ],
+  "author": "Kimberley Snow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KimS112022/Heroes-Hobbies-App/issues"
+  },
+  "homepage": "https://github.com/KimS112022/Heroes-Hobbies-App#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
