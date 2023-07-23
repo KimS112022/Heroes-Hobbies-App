@@ -53,7 +53,7 @@ router.post("comics", async (req, res) => {
 //Endpoint to update a comic by id
 router.put("/comics/:id", async (req, res) => {
   const comic_id = req.params.id;
-  const { title, issue, release_date, artise, price, description, quantity } =
+  const { title, issue, release_date, artist, price, description, quantity } =
     req.body;
 
   try {

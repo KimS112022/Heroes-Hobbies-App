@@ -1,0 +1,15 @@
+<!-- views/comic-details.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Comic Details - Heroes & Hobbies</title>
+  </head>
+  <body>
+    <h1>Comic Details - <%+ comic.title %> - <%+ comic.issue %></h1>
+    <p><strong>Artist: </strong> <%= comic.artist %></p>
+    <p><strong>Price: </strong> <%= comic.price %></p>
+    <p><strong>Description: </strong> <%= comic.description %></p>
+    <p><strong>Quantity: </strong> <%= comic.quantity %></p>
+    <a href="/">Back to Comics List</a>
+  </body>
+</html>

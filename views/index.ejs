@@ -1,0 +1,54 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heroes & Hobbies - Comic Book app</title>
+  </head>
+  <body>
+    <h1>Comic Book App - Heroes & Hobbies</h1>
+
+    <!-- Search Form -->
+    <form action="/search" method="get">
+      <label for="searchTitle">Search by Title:</label>
+      <input
+        type="text"
+        id="searchTitle"
+        name="title"
+        placeholder="Enter title"
+      />
+      <label for="searchTitle">Search by Issue:</label>
+      <input
+        type="text"
+        id="searchTitle"
+        name="issue"
+        placeholder="Enter issue"
+      />
+      <label for="searchTitle">Search by release_date:</label>
+      <input
+        type="text"
+        id="searchTitle"
+        name="release_date"
+        placeholder="Enter date"
+      />
+      <label for="searchTitle">Search by artist:</label>
+      <input
+        type="text"
+        id="searchTitle"
+        name="artist"
+        placeholder="Enter Artist:"
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- List of Comics -->
+    <ul>
+      <%= comic.forEach(comic => { %>
+      <li>
+        <a href="/comics/<%= comic.id %>">
+          <%= comic.title %> - <%= comic.issue %>
+        </a>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

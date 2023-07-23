@@ -1,0 +1,28 @@
+<!-- views/add-comic.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Comic - Heroes & Hobbies</title>
+  </head>
+  <body>
+    <h1>Add New Comic</h1>
+    <form action="/comics" method="post">
+      <label for="title">Title: </label>
+      <input type="text" id="title" name="title" required />
+      <label for="issue">Issue: </label>
+      <input type="text" id="issue" name="issue" required />
+      <label for="release_date">Release Date: </label>
+      <input type="text" id="release_date" name="release_date" required />
+      <label for="artist">Artist: </label>
+      <input type="text" id="artist" name="artist" required />
+      <label for="price">Price: </label>
+      <input type="text" id="price" name="price" required />
+      <label for="description">Description: </label>
+      <input type="text" id="description" name="description" required />
+      <label for="quantity">Quantity: </label>
+      <input type="number" id="quantity" name="quantity" required />
+      <button type="submit">Add Comic</button>
+    </form>
+    <a href="/">Back to Comics List</a>
+  </body>
+</html>
