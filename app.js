@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 const pool = require("./config");
+const comicsRouter = require("./comicsRouter"); //Imports the comicsRouter file
+
+//Use the comicsRouter for handling comics-related API endpoints
+app.use("/api", comicsRouter);
 
 //APP ROUTES AND OTHER CONFIGURATIONS GO HERE
 
