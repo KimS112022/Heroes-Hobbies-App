@@ -1,0 +1,69 @@
+<!-- views/edit_comic.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Comic - Heroes & Hobbies</title>
+  </head>
+  <body>
+    <h1>Edit Comic - <%= comic.title %> - <%= comic.issue %></h1>
+    <form action="/comics/<%= comic.id %>" method="put">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value="<%= comic.title %>"
+        required
+      />
+      <label for="issue">Issue:</label>
+      <input
+        type="text"
+        id="issue"
+        name="issue"
+        value="<%= comic.issue %>"
+        required
+      />
+      <label for="artist">Artist:</label>
+      <input
+        type="text"
+        id="artist"
+        name="artist"
+        value="<%= comic.artist %>"
+        required
+      />
+      <label for="release_date">Release Date:</label>
+      <input
+        type="date"
+        id="release_date"
+        name="release_date"
+        value="<%= comic.release_date %>"
+        required
+      />
+      <label for="price">Price:</label>
+      <input
+        type="number"
+        id="price"
+        name="price"
+        value="<%= comic.price %>"
+        required
+      />
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        value="<%= comic.description %>"
+        required
+      />
+      <label for="quantity">Quantity:</label>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        value="<%= comic.quantity %>"
+        required
+      />
+    </form>
+    <a href="/">Back to Comics List</a>
+  </body>
+</html>
