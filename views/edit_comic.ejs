@@ -63,7 +63,32 @@
         value="<%= comic.quantity %>"
         required
       />
+      <button type="submit">Update Comic</button>
     </form>
+
+    <!-- Patch Request -->
+
+    <h2>Quick Edit</h2>
+    <form action="/comics/<%= comic.id %>" method="patch">
+      <label for="price">Price:</label>
+      <input
+        type="number"
+        id="price"
+        name="price"
+        value="<%= comic.price %>"
+        required
+      />
+      <label for="quantity">Quantity:</label>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        value="<%= comic.quantity %>"
+        required
+      />
+      <button type="submit">Quick Update</button>
+    </form>
+
     <a href="/">Back to Comics List</a>
   </body>
 </html>

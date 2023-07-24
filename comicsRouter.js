@@ -82,6 +82,38 @@ router.put("/comics/:id", async (req, res) => {
   }
 });
 
+//Endpoint to update a comic's details by id using PATCH request
+router.patch("/comics/:id", async (req, res) => {
+  const comic_id = req.params.id;
+  const { title, issue, release_date, artist, price, description, quantity } =
+    req.body;
+
+  try {
+    const queryResult = await pool.query(
+      "UPDATE comics SET title = $1, issue = $2, release_date = $3, artist = $4, price = $5, description = $6, quantity = $7 WHERE id = $8 RETURNING *",
+      [
+        title,
+        issue,
+        release_date,
+        artist,
+        price,
+        description,
+        quantity,
+        comic_id,
+      ]
+    );
+
+    if (queryResult.rowCount === 0) {
+      res.status(404).json({ error: "Comic not found" });
+    } else {
+      res.json(queryResult.rows[0]);
+    }
+  } catch (err) {
+    console.error("Error updating comic:", err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 //Endpoint to delete a comic by id
 router.delete("/comics/:id", async (req, res) => {
   const comic_id = req.params.id;
