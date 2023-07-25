@@ -1,10 +1,9 @@
 const express = require("express");
 const app = express();
-const pool = require("./config");
 const comicsRouter = require("./comicsRouter"); //Imports the comicsRouter file
 
 //Use the comicsRouter for handling comics-related API endpoints
-app.use("/api", comicsRouter);
+app.use("/", comicsRouter);
 
 //Function to handle the "Quick Update" form submission
 function handleQuickUpdateFormSubmit(comic_id) {
@@ -52,8 +51,6 @@ const port = process.env.PORT || 3000; //Sets the port number
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
-const { Pool } = require("pg");
 
 //Set up the connection pool using environment variables
 const pool = new Pool({
@@ -120,7 +117,7 @@ async function handleSearchFormSubmit(event) {
   if (searchArtist) apiURL += "?title=${searchArtist}";
 
   try {
-    const response = await axios.get(apiUrl);
+    const response = await axios.get(apiURL);
     const comics = response.data;
 
     //Display the filtered list of comics on the UI
