@@ -42,10 +42,10 @@
 
     <!-- List of Comics -->
     <ul>
-      <%= comic.forEach(comic => { %>
+      <% comics.forEach(comic => { %>
       <li>
         <a href="/comics/<%= comic.id %>">
-          <%= comic.title %> - <%= comic.issue %>
+          <% comic.title %> - <% comic.issue %>
         </a>
       </li>
       <% }); %>
@@ -64,7 +64,7 @@
         };
 
         //Send PATCH request to update the comic data
-        fetch("/comics/${comic_id}", {
+        fetch("/comics/" + comic_id, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

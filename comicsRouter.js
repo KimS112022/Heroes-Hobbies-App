@@ -3,12 +3,18 @@ const router = express.Router();
 const comicsDAL = require("./comicsDAL");
 
 //Define a route for the root URL("/") to render the index view
-router.get("/", (req, res) => {
-  res.render("index");
+router.get("/", async (req, res) => {
+  try {
+    const comics = await comicsDAL.getAllComics(req.query);
+    res.render("index", { comics }); //Pass the comics data to the ejs template
+  } catch (error) {
+    console.error("Error fetching comics:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 //Endpoint to fetch all comics
-router.get("/comicsDAL.js", async (req, res) => {
+router.get("/comics/", async (req, res) => {
   try {
     const comics = await comicsDAL.getAllComics(req.query);
     res.json(comics);
