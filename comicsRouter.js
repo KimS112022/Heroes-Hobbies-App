@@ -2,8 +2,13 @@ const express = require("express");
 const router = express.Router();
 const comicsDAL = require("./comicsDAL");
 
+//Define a route for the root URL("/") to render the index view
+router.get("/", (req, res) => {
+  res.render("index");
+});
+
 //Endpoint to fetch all comics
-router.get("/api/comics", async (req, res) => {
+router.get("/comicsDAL.js", async (req, res) => {
   try {
     const comics = await comicsDAL.getAllComics(req.query);
     res.json(comics);
