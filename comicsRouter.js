@@ -8,7 +8,11 @@ router.get("/", (req, res) => {
 });
 
 //Endpoint to fetch all comics
+<<<<<<< Updated upstream
 router.get("/comicsDAL.js", async (req, res) => {
+=======
+router.get("/comics", async (req, res) => {
+>>>>>>> Stashed changes
   try {
     const comics = await comicsDAL.getAllComics(req.query);
     res.json(comics);
@@ -18,7 +22,7 @@ router.get("/comicsDAL.js", async (req, res) => {
 });
 
 //Endpoint to fetch a single comic by id
-router.get("/api/comics/:id", async (req, res) => {
+router.get("/comics/:id", async (req, res) => {
   try {
     const comic = await comicsDAL.getComicById(req.params.id);
     if (comic) {
@@ -32,7 +36,7 @@ router.get("/api/comics/:id", async (req, res) => {
 });
 
 //Endpoint to add a new comic
-router.post("/api/comics", async (req, res) => {
+router.post("/comics", async (req, res) => {
   try {
     const comic = await comicsDAL.createComic(req.body);
     res.status(201).json(comic);
@@ -42,7 +46,7 @@ router.post("/api/comics", async (req, res) => {
 });
 
 //Endpoint to update a comic by id
-router.put("/api/comics/:id", async (req, res) => {
+router.put("/comics/:id", async (req, res) => {
   try {
     const comic = await comicsDAL.updateComic(req.params.id, req.body);
     if (comic) {
@@ -56,7 +60,7 @@ router.put("/api/comics/:id", async (req, res) => {
 });
 
 //Endpoint to update a comic's details by id using PATCH request
-router.patch("/api/comics/:id", async (req, res) => {
+router.patch("/comics/:id", async (req, res) => {
   try {
     const comic = await comicsDAL.updateComic(req.params.id, req.body);
     if (comic) {
@@ -70,7 +74,7 @@ router.patch("/api/comics/:id", async (req, res) => {
 });
 
 //Endpoint to delete a comic by id
-router.delete("/api/comics/:id", async (req, res) => {
+router.delete("/comics/:id", async (req, res) => {
   try {
     const deletedComic = await comicsDAL.deleteComic(req.params.id);
     if (deletedComic) {

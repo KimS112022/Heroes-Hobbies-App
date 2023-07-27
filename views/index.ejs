@@ -44,8 +44,13 @@
     <ul>
       <%= comic.forEach(comic => { %>
       <li>
+<<<<<<< Updated upstream
         <a href="/comics/<%= comic.id %>">
           <%= comic.title %> - <%= comic.issue %>
+=======
+        <a href="/comics<%= comic.id %>">
+          <% comic.title %> - <% comic.issue %>
+>>>>>>> Stashed changes
         </a>
       </li>
       <% }); %>
@@ -64,7 +69,11 @@
         };
 
         //Send PATCH request to update the comic data
+<<<<<<< Updated upstream
         fetch("/comics/${comic_id}", {
+=======
+        fetch("/comics" + comic_id, {
+>>>>>>> Stashed changes
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -107,7 +116,7 @@
           comics.forEach((comic) => {
             const listItem = document.createElement("li");
             listItem.innerHTML =
-              '<a href="/comics/' +
+              '<a href="/comics' +
               comic.id +
               '">' +
               comic.title +
@@ -124,7 +133,7 @@
       //Function to fetch a single comic by ID from the API
       async function fetchSingleComic(comic_id) {
         try {
-          const response = await axios.get("/comics/${comic_id}");
+          const response = await axios.get("/comics${comic_id}");
           const comic = response.data;
 
           //Display the detailed info about the comic on the UI
@@ -169,7 +178,7 @@
           comics.forEach((comic) => {
             const listItem = document.createElement("li");
             listItem.innerHTML =
-              '<a href="/comics/' +
+              '<a href="/comics' +
               comic.id +
               '">' +
               comic.title +
