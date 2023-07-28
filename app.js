@@ -10,10 +10,11 @@ app.set("view engine", "ejs");
 //Use the comicsRouter for handling comics-related API endpoints
 app.use("/", comicsRouter);
 
-const port = process.env.PORT || 3003; //Sets port number
-=======
-//Middleware to serve static files from public directory
-app.use(express.static("public"));
+const port = process.env.PORT || 4000; //Sets port number
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 //Set up the connection pool using environment variables
 const pool = new Pool({
