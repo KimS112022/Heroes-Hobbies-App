@@ -42,13 +42,13 @@
 
     <!-- List of Comics -->
     <ul>
-      <%= comic.forEach(comic => { %>
+      <% for(let i = 0; i < comic.length; i++) { %>
       <li>
-        <a href="/comics/<%= comic.id %>">
-          <%= comic.title %> - <%= comic.issue %>
+        <a href="/comics<%= comic.id %>">
+          <% comic.title %> - <% comic.issue %>
         </a>
       </li>
-      <% }); %>
+      <% }; %>
     </ul>
 
     <!-- FrontEnd JS code-->

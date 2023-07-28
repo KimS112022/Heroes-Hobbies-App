@@ -4,7 +4,7 @@ const comicsDAL = require("./comicsDAL");
 
 //Define a route for the root URL("/") to render the index view
 router.get("/", (req, res) => {
-  res.render("index");
+  res.render("index.ejs");
 });
 
 //Endpoint to fetch all comics
